@@ -7,6 +7,8 @@ class Car():
         self.make = make
         self.model = model
         self.year = year
+        self.odometer_reading = 0 # definindo um valor default para um atributo
+        # você não precisará incluir um parâmetro para ele
 
 
     def get_descriptive_name(self):
