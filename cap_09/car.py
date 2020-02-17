@@ -17,5 +17,11 @@ class Car():
         return long_name.title()
 
 
+    def read_odometer(self):
+        """ Exibe uma frase que mostra a milhagem do carro. """
+        print("This car has {} miles on it.".format(self.odometer_reading))
+
+
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
