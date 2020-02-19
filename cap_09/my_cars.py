@@ -1,4 +1,4 @@
-# Importando váarias classes de um módulo
+# Importando várias classes de um módulo
 from car import Car, ElectricCar
 
 my_beetle = Car('volkswagen', 'beetle', 2016)
