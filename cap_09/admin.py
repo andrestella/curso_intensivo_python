@@ -34,13 +34,12 @@ class User():
         self.login_attempts = 0
 
 
-class Admin(User):
-    """ Modelando um administrador do sistema. """
+class Privileges():
+    """ Modelando os privilégios dos usuário do sistema. """
 
 
-    def __init__(self, first_name, last_name, age, occupation="system administrator"):
-        """ Inicializando os atributos de um administrador do sistema. """
-        super().__init__(first_name, last_name, age, occupation)
+    def __init__(self):
+        """ Inicializa os atributos da classe 'Privileges'. """
         self.privileges = []
 
 
@@ -50,14 +49,24 @@ class Admin(User):
             for privilege in self.privileges:
                 print("- " + privilege) 
         else:
-            print("This user has no privileges.")
+            print("This user has no privileges.")  
+
+
+class Admin(User):
+    """ Modelando um administrador do sistema. """
+
+
+    def __init__(self, first_name, last_name, age, occupation="system administrator"):
+        """ Inicializando os atributos de um administrador do sistema. """
+        super().__init__(first_name, last_name, age, occupation)
+        self.privileges = Privileges()
 
 
 administrador = Admin('andré', 'alexandre', 40)
 administrador.describe_user()
-administrador.privileges = [
+administrador.privileges.privileges = [
     'can add post',
     'can delete post',
     'can ban user',
     ]
-administrador.show_privileges()
+administrador.privileges.show_privileges()
