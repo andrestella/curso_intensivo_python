@@ -1,4 +1,4 @@
-""" Um conjunto de classes usado para representar carro a combustível e elétricos. """
+""" Um conjunto de classes usado para representar carros a combustível e elétricos. """
 # Escreva uma docstring para cada módulo que criar
 
 
