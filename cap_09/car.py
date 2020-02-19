@@ -41,6 +41,11 @@ class Car():
             print("You can't roll back an odometer!")
 
 
+    def fill_gas_tank(self):
+        """ Simula o abastecimento de combustível. """
+        print("Filling the tank...")
+
+
 # Quando criamos uma classe-filha, a classe pai deve fazer parte do arquivo atual 
 # e deve aparecer antes da classe-filha no arquivo.
 class ElectricCar(Car):
@@ -48,10 +53,23 @@ class ElectricCar(Car):
 
 
     def __init__(self, make, model, year):
-        """ Inicializa os atributos da classe pai. """
+        """
+        Inicializa os atributos da classe pai.
+        Em seguida, inicializa os atributos específicos de um carro elétrico.
+        """
         super().__init__(make, model, year)
-        # O nome 'super' é derivado de uma convenção segundo a qual a classe-pai
-        # se chama 'superclasse' e a classe-filha é a 'subclasse'.
+        self.battery_size = 70
+
+
+    def describe_battery(self):
+        """ Exibe uma frase que exibe a capacidade da bateria. """
+        print("This car has a {}-kWh battery.".format(self.battery_size))
+
+
+    # Sobrescrevendo métodos da classe-pai
+    def fill_gas_tank(self):
+        """ Carros elétricos não têm tanques de combustível. """
+        print("This car doesn't need a gas tank!")
 
 
 my_new_car = Car('audi', 'a4', 2016)
@@ -76,7 +94,10 @@ my_used_car.read_odometer()
 
 my_used_car.increment_odometer(100)
 my_used_car.read_odometer()
+my_used_car.fill_gas_tank()
 
 # Testando se a herança está funcionando 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+my_tesla.fill_gas_tank()
