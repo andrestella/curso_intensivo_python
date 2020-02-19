@@ -41,6 +41,19 @@ class Car():
             print("You can't roll back an odometer!")
 
 
+# Quando criamos uma classe-filha, a classe pai deve fazer parte do arquivo atual 
+# e deve aparecer antes da classe-filha no arquivo.
+class ElectricCar(Car):
+    """ Representa aspectos de um carro específicos de veículos elétricos. """
+
+
+    def __init__(self, make, model, year):
+        """ Inicializa os atributos da classe pai. """
+        super().__init__(make, model, year)
+        # O nome 'super' é derivado de uma convenção segundo a qual a classe-pai
+        # se chama 'superclasse' e a classe-filha é a 'subclasse'.
+
+
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
@@ -63,3 +76,7 @@ my_used_car.read_odometer()
 
 my_used_car.increment_odometer(100)
 my_used_car.read_odometer()
+
+# Testando se a herança está funcionando 
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
