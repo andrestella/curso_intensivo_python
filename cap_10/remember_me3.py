@@ -4,7 +4,7 @@ import json
 
 def get_stored_username():
     """ Obtém o nome do usuário já armazenado se estiver disponível. """
-    filename = 'username2.json'
+    filename = 'username3.json'
     try:
         with open(filename) as f_obj:
             username = json.load(f_obj)
@@ -16,15 +16,21 @@ def get_stored_username():
     else:
         return username
 
+def get_new_username():
+    """ Pede um novo nome de usuário. """
+    username = input("What is your name? ")
+    filename = 'username3.json'
+    with open(filename, 'w') as f_obj:
+            json.dump(username, f_obj)
+    return username
+
 def greet_user():
     """ Saúda o usuário pelo nome. """
     username = get_stored_username()
     if username:
         print("Welcome back, {}!".format(username))
     else:        
-        username = input("What is your name? ")
-        with open(filename, 'w') as f_obj:
-            json.dump(username, f_obj)
-            print("We'll remember you when you come back, {}!".format(username))
+        username = get_new_username()
+        print("We'll remember you when you come back, {}!".format(username))
     
 greet_user()
