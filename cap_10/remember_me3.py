@@ -31,11 +31,10 @@ def greet_user():
         correct = input("Are you {}? (yes/no) ".format(username))
         if correct == 'yes':
             print("Welcome back, {}!".format(username))
-        else:        
-            username = get_new_username()
-            print("We'll remember you when you come back, {}!".format(username))
-    else:        
-        username = get_new_username()
-        print("We'll remember you when you come back, {}!".format(username))
+            return
+            # Uma declaração de retorno vazia informa ao Python para deixar
+            # a função sem executar mais nenhum código dentro dela.
+    username = get_new_username()
+    print("We'll remember you when you come back, {}!".format(username))
     
 greet_user()
