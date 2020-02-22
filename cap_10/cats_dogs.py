@@ -1,10 +1,11 @@
 filenames = ['cats.txt', 'dogs2.txt']
 
 for filename in filenames:
-    try:
-        print("\nConteúdo do arquivo '{}':".format(filename))
+    try:        
         with open(filename) as arquivo:
-            conteudo = arquivo.read()
-            print(conteudo)
+            conteudo = arquivo.read()            
     except FileNotFoundError:
-        print("O arquivo '{}' não foi encontrado!".format(filename))
+        pass
+    else:
+        print("\nConteúdo do arquivo '{}':".format(filename))
+        print(conteudo)
