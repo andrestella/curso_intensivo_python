@@ -1,7 +1,7 @@
 """ Uma coleção de funções para trabalhar com cidades. """
 
 
-def city_data(cidade, pais):
-    """ Devolve o nome da cidade junto de seu país de forma elegante. """
-    cidade_pais = cidade + ", " + pais
-    return cidade_pais.title()
+def city_data(cidade, pais, populacao):
+    """ Devolve o nome da cidade junto de seu país e população de forma elegante. """
+    cidade_dados = cidade + ", " + pais + " - população " + populacao
+    return cidade_dados.title()
