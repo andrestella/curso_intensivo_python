@@ -3,8 +3,9 @@
 
 def city_data(cidade, pais, populacao=''):
     """ Devolve os dados informados da cidade de forma elegante. """
+    cidade_pais = (cidade + ", " + pais).title()
     if populacao:
-        cidade_dados = cidade + ", " + pais + " - população " + populacao
+        cidade_dados = cidade_pais + " - população " + str(populacao)
     else:
-        cidade_dados = cidade + ", " + pais
-    return cidade_dados.title()
+        cidade_dados = cidade_pais
+    return cidade_dados
