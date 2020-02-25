@@ -13,9 +13,10 @@ class AnonymousSurvey():
         print(self.question)
 
 
-    def store_response(self, new_response):
-        """ Armazena uma única resposta da pesquisa. """
-        self.responses.append(new_response)
+    def store_response(self, *new_response):
+        """ Armazena várias respostas para cada pessoa. """
+        for response in new_response:
+            self.responses.append(response)
 
 
     def show_results(self):
